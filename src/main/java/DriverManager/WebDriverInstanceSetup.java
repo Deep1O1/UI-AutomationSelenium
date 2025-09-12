@@ -1,14 +1,12 @@
 package DriverManager;
 
-import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.util.HashMap;
-import ReusableUtility.configReader;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class WebDriverInstanceSetup {
     
@@ -18,34 +16,27 @@ public class WebDriverInstanceSetup {
 
     }
 
-    public static WebDriver getWebDriverInstance(String browserName , String browserVersion , String platform) throws MalformedURLException{
-        if(driver.get() == null){
-
-            String execUrl = "https://" + configReader.getProperty("username") + ":" + configReader.getProperty("accessKey") + "@hub.lambdatest.com/wd/hub";
-
-            DesiredCapabilities rules = new DesiredCapabilities();
-
-            HashMap<String, Object> ltOptions = new HashMap<>();
-            ltOptions.put("browserName", browserName);
-            ltOptions.put("browserVersion", browserVersion);
-            ltOptions.put("platformName", platform);
-            ltOptions.put("visual", true);
-            ltOptions.put("video", true);
-            ltOptions.put("network", true);
-            ltOptions.put("console", "true");
-            ltOptions.put("w3c", true);
-            ltOptions.put("build", "Selenium101");
-
-            rules.setCapability("LT:Options", ltOptions);
-
-        try{
-            URI gridUri = new URI(execUrl);
-            URL gridUrl = gridUri.toURL();
-            WebDriver webDriver = new RemoteWebDriver(gridUrl, rules);
-            driver.set(webDriver);
-           }catch(URISyntaxException e) {
-                throw new MalformedURLException("Invalid grid URL: " + execUrl);
-           }         
+    public static WebDriver getDriverInstance(String browserName) {
+        if (driver.get() == null) {
+            switch (browserName) {
+                case "Chrome" -> {
+                    ChromeOptions options = new ChromeOptions();
+                    options.addArguments("--start-maximized");
+                    driver.set(new ChromeDriver(options));
+                }
+                case "Edge" -> {
+                    EdgeOptions edgeOptions = new EdgeOptions();
+                    edgeOptions.addArguments("--start-maximized");
+                    driver.set(new EdgeDriver(edgeOptions));
+                }
+                case "FireFox" -> {
+                    FirefoxOptions firefoxOptions = new FirefoxOptions();
+                    firefoxOptions.addArguments("--width=1920");
+                    firefoxOptions.addArguments("--height=1080");
+                    driver.set(new FirefoxDriver(firefoxOptions));
+                }
+                default -> throw new IllegalArgumentException("Invalid browser option chosen");
+            }
         }
         return driver.get();
     }
