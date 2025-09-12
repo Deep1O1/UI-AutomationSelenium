@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name = "Lambda test suite Selenium-101" parallel = "tests" thread-count = "2">
+    <test name = "ChromeTest">
+        <parameter name = "browserName" value = "chrome"/>
+        <parameter name = "browserVersion" value = "140.0"/>
+        <parameter name = "platform" value = "Windows 10"/>
+        <classes>
+            <class name = "TestCases.AssignmentTest"/>
+        </classes>
+    </test>
+    <test name = "EdgeTest">
+        <parameter name = "browserName" value = "edge"/>
+        <parameter name = "browserVersion" value = "140.0"/>
+        <parameter name = "platform" value = "Windows 10"/>
+        <classes>
+            <class name = "TestCases.AssignmentTest" />
+        </classes>
+    </test>
+</suite>
+

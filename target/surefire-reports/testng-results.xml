@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-09-12T15:45:23 IST" name="Lambda test suite Selenium-101" finished-at="2025-09-12T15:46:58 IST" duration-ms="95053">
+    <groups>
+    </groups>
+    <test started-at="2025-09-12T15:45:23 IST" name="ChromeTest" finished-at="2025-09-12T15:46:21 IST" duration-ms="57256">
+      <class name="TestCases.AssignmentTest">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:TestCases.AssignmentTest@481a996b]" started-at="2025-09-12T15:45:23 IST" name="setUp" finished-at="2025-09-12T15:45:37 IST" duration-ms="13991" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[140.0]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Windows 10]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testScenario1()[pri:0, instance:TestCases.AssignmentTest@481a996b]" started-at="2025-09-12T15:45:37 IST" name="testScenario1" finished-at="2025-09-12T15:45:41 IST" duration-ms="4059" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testScenario1 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.AssignmentTest@481a996b]" started-at="2025-09-12T15:45:41 IST" name="tearDown" finished-at="2025-09-12T15:45:42 IST" duration-ms="397" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:TestCases.AssignmentTest@481a996b]" started-at="2025-09-12T15:45:42 IST" name="setUp" finished-at="2025-09-12T15:45:53 IST" duration-ms="11352" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[140.0]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Windows 10]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testScenario2()[pri:0, instance:TestCases.AssignmentTest@481a996b]" started-at="2025-09-12T15:45:53 IST" name="testScenario2" finished-at="2025-09-12T15:46:02 IST" duration-ms="8453" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testScenario2 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.AssignmentTest@481a996b]" started-at="2025-09-12T15:46:02 IST" name="tearDown" finished-at="2025-09-12T15:46:02 IST" duration-ms="761" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:TestCases.AssignmentTest@481a996b]" started-at="2025-09-12T15:46:02 IST" name="setUp" finished-at="2025-09-12T15:46:13 IST" duration-ms="10633" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[140.0]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Windows 10]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testScenario3()[pri:0, instance:TestCases.AssignmentTest@481a996b]" started-at="2025-09-12T15:46:13 IST" name="testScenario3" finished-at="2025-09-12T15:46:20 IST" duration-ms="7405" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testScenario3 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.AssignmentTest@481a996b]" started-at="2025-09-12T15:46:20 IST" name="tearDown" finished-at="2025-09-12T15:46:21 IST" duration-ms="175" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- TestCases.AssignmentTest -->
+    </test> <!-- ChromeTest -->
+    <test started-at="2025-09-12T15:45:23 IST" name="EdgeTest" finished-at="2025-09-12T15:46:58 IST" duration-ms="95053">
+      <class name="TestCases.AssignmentTest">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:TestCases.AssignmentTest@6ae5aa72]" started-at="2025-09-12T15:45:23 IST" name="setUp" finished-at="2025-09-12T15:45:49 IST" duration-ms="25143" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[140.0]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Windows 10]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testScenario1()[pri:0, instance:TestCases.AssignmentTest@6ae5aa72]" started-at="2025-09-12T15:45:49 IST" name="testScenario1" finished-at="2025-09-12T15:45:59 IST" duration-ms="10834" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testScenario1 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.AssignmentTest@6ae5aa72]" started-at="2025-09-12T15:45:59 IST" name="tearDown" finished-at="2025-09-12T15:46:00 IST" duration-ms="478" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:TestCases.AssignmentTest@6ae5aa72]" started-at="2025-09-12T15:46:00 IST" name="setUp" finished-at="2025-09-12T15:46:16 IST" duration-ms="15832" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[140.0]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Windows 10]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testScenario2()[pri:0, instance:TestCases.AssignmentTest@6ae5aa72]" started-at="2025-09-12T15:46:16 IST" name="testScenario2" finished-at="2025-09-12T15:46:23 IST" duration-ms="7521" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testScenario2 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.AssignmentTest@6ae5aa72]" started-at="2025-09-12T15:46:23 IST" name="tearDown" finished-at="2025-09-12T15:46:24 IST" duration-ms="570" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:TestCases.AssignmentTest@6ae5aa72]" started-at="2025-09-12T15:46:24 IST" name="setUp" finished-at="2025-09-12T15:46:49 IST" duration-ms="25409" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[140.0]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Windows 10]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testScenario3()[pri:0, instance:TestCases.AssignmentTest@6ae5aa72]" started-at="2025-09-12T15:46:49 IST" name="testScenario3" finished-at="2025-09-12T15:46:58 IST" duration-ms="8996" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testScenario3 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.AssignmentTest@6ae5aa72]" started-at="2025-09-12T15:46:58 IST" name="tearDown" finished-at="2025-09-12T15:46:58 IST" duration-ms="247" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- TestCases.AssignmentTest -->
+    </test> <!-- EdgeTest -->
+  </suite> <!-- Lambda test suite Selenium-101 -->
+</testng-results>
