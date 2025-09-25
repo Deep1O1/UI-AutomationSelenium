@@ -1,7 +1,0 @@
-PageObjects\HomePage.class
-PageObjects\InputFormPage.class
-PageObjects\DragDropSliderPage.class
-PageObjects\SimpleFormPage.class
-ReusableUtility\configReader.class
-ReusableUtility\ReusableComponents.class
-DriverManager\WebDriverInstanceSetup.class
