@@ -3,7 +3,7 @@
 <suite name = "Lambda test suite Selenium-101">
     <test name = "ChromeTest">
         <classes>
-            <class name = "TestCases.AssignmentTest"/>
+            <class name = "LambdaTest.AssignmentTest"/>
         </classes>
     </test>    
 </suite>

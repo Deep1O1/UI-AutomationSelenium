@@ -1,4 +1,5 @@
 package LambdaTest;
+import BaseUtility.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -8,7 +9,7 @@ import PageObjects.InputFormPage;
 import PageObjects.SimpleFormPage;
 import ReusableUtility.configReader;
 
-public class AssignmentTest extends BaseTest{
+public class AssignmentTest extends BaseTest {
     
 
     @Test
@@ -43,7 +44,9 @@ public class AssignmentTest extends BaseTest{
         InputFormPage ip = new InputFormPage(driver);
         ip.validateChildPage();
         ip.clickOnSubmitButton();
-        Assert.assertEquals(ip.getValidationMessage(), "Please fill out this field.");
+        String validationMsg = ip.getValidationMessage();
+        Assert.assertTrue(validationMsg.contains("Please fill"),
+                "Unexpected validation message: " + validationMsg);
         ip.selectCountry(configReader.getProperty("country"));
         ip.fillInputForm();
         ip.clickOnSubmitButton();

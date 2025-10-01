@@ -20,5 +20,6 @@ public class BaseTest {
     public void tearDown(){
         WebDriverInstanceSetup.removeWebDriver();
     }
-    
+
+
 }

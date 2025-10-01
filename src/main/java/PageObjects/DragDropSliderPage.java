@@ -28,7 +28,7 @@ public class DragDropSliderPage extends ReusableComponents{
     }
 
     public boolean sliderMovementRangeValue(String value){
-        wait.until(ExpectedConditions.textToBePresentInElement(sliderOutput, "95"));
+        wait.until(ExpectedConditions.textToBePresentInElement(sliderOutput, value));
         return sliderOutput.getText().equals(value);
     }
 
