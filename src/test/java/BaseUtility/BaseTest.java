@@ -38,8 +38,9 @@ public class BaseTest {
         }
 
         String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        String directory = "screenshots";
-        String path = directory + "/" + testName + "_" + timestamp + ".png";
+        String directory = "Test-Reports/screenshots";
+        String fileName = testName + "_" + timestamp + ".png";
+        String path = directory + "/" + fileName;
 
         File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         try {
@@ -51,7 +52,7 @@ public class BaseTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return path;
+        return "./screenshots/" + fileName;
     }
 
 }

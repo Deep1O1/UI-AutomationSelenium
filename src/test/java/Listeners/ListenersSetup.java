@@ -5,6 +5,7 @@ import UtilityManager.ExtentTestSetup;
 import UtilityManager.WebDriverInstanceSetup;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -32,7 +33,9 @@ public class ListenersSetup implements ITestListener{
     @Override
     public void onTestFailure(ITestResult result) {
         ExtentTestSetup.getTest().fail(result.getThrowable());
-        String screenshotPath = BaseTest.takeScreenshot(WebDriverInstanceSetup.getDriver(), result.getMethod().getMethodName());
+        String screenshotPath = BaseTest.takeScreenshot(WebDriverInstanceSetup.getDriver(), result.getName());
+        ExtentTestSetup.getTest().fail("Test Failed",
+                MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
         ExtentTestSetup.getTest().addScreenCaptureFromPath(screenshotPath);
     }
 
