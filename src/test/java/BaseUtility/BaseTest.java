@@ -1,4 +1,5 @@
 package BaseUtility;
+import ReusableUtility.configReader;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -10,7 +11,8 @@ public class BaseTest {
 
     @BeforeMethod
     public void setUp() {
-        driver = WebDriverInstanceSetup.getDriverInstance("Chrome");
+        String browserName = System.getProperty("browser") != null ? System.getProperty("browser") : configReader.getProperty("browser");
+        driver = WebDriverInstanceSetup.getDriverInstance(browserName);
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
         driver.get("https://www.lambdatest.com/selenium-playground/");
