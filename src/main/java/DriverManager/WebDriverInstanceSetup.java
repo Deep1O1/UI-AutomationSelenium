@@ -41,6 +41,10 @@ public class WebDriverInstanceSetup {
         return driver.get();
     }
 
+    public static WebDriver getDriver(){
+        return driver.get();
+    }
+
     
     public static void removeWebDriver(){
         if(driver.get() != null) {
