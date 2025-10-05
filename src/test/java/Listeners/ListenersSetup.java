@@ -10,6 +10,11 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 public class ListenersSetup implements ITestListener{
 
     private static ExtentReports reports;
@@ -17,6 +22,28 @@ public class ListenersSetup implements ITestListener{
     @Override
     public void onStart(ITestContext context) {
         reports = ExtentTestSetup.getExtentReports();
+
+        String directory = "Test-Reports/screenshots";
+        Path screenshotDir = Paths.get(directory);
+
+        try {
+            if (Files.exists(screenshotDir)) {
+                Files.walk(screenshotDir)
+                        .filter(Files::isRegularFile)
+                        .forEach(path -> {
+                            try {
+                                Files.delete(path);
+                            } catch (IOException e) {
+                                System.err.println("Failed to delete: " + path);
+                            }
+                        });
+            } else {
+                Files.createDirectories(screenshotDir);
+                System.out.println("Screenshot folder created.");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -34,9 +61,8 @@ public class ListenersSetup implements ITestListener{
     public void onTestFailure(ITestResult result) {
         ExtentTestSetup.getTest().fail(result.getThrowable());
         String screenshotPath = BaseTest.takeScreenshot(WebDriverInstanceSetup.getDriver(), result.getName());
-        ExtentTestSetup.getTest().fail("Test Failed",
-                MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
-        ExtentTestSetup.getTest().addScreenCaptureFromPath(screenshotPath);
+        ExtentTestSetup.getTest().fail(MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+        //ExtentTestSetup.getTest().addScreenCaptureFromPath(screenshotPath);
     }
 
     @Override

@@ -6,4 +6,5 @@
 .vscode/
 target/
 *.class
+Test-Reports/
 
