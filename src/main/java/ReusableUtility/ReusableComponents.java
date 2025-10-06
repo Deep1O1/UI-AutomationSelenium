@@ -1,6 +1,8 @@
 package ReusableUtility;
 
 import java.time.Duration;
+import java.util.Iterator;
+import java.util.Set;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -33,6 +35,47 @@ public class ReusableComponents {
     public void validateChildPage(){
         wait.until(ExpectedConditions.visibilityOf(childPageCenterElement));
     }
+
+    public void clickElement(WebElement element){
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+        element.click();
+    }
+
+    public void rightClickElement(WebElement element){
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+        action.contextClick(element);
+    }
+
+    public void doubleClickElement(WebElement element){
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+        action.doubleClick(element);
+    }
+
+    public void hoverOverElement(WebElement element){
+        wait.until(ExpectedConditions.visibilityOf(element));
+        action.moveToElement(element);
+    }
+
+    public String getElementText(WebElement element){
+        wait.until(ExpectedConditions.visibilityOf(element));
+        return element.getText();
+    }
+
+    public void switchToFirstChildWindow() {
+        String parentWindow = driver.getWindowHandle();
+        Set<String> windows = driver.getWindowHandles();
+
+        for (String window : windows) {
+            if (!window.equals(parentWindow)) {
+                driver.switchTo().window(window);
+                System.out.println("Switched to Child Window: " + driver.getTitle());
+                return;
+            }
+        }
+        System.out.println("No child window found!");
+    }
+
+
 
     public void moveSlider(WebElement element , int xOffset , int yOffset){
         action.clickAndHold(element)
