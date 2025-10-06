@@ -8,6 +8,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,9 +19,10 @@ public class BaseTest {
     
     protected WebDriver driver;
 
+    @Parameters({"browser"})
     @BeforeMethod
-    public void setUp() {
-        String browserName = System.getProperty("browser") != null ? System.getProperty("browser") : configReader.getProperty("browser");
+    public void setUp(String browserName) {
+        //String browserName = System.getProperty("browser") != null ? System.getProperty("browser") : configReader.getProperty("browser");
         driver = WebDriverInstanceSetup.getDriverInstance(browserName);
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
@@ -31,6 +33,9 @@ public class BaseTest {
     public void tearDown(){
         WebDriverInstanceSetup.removeWebDriver();
     }
+
+
+
 
     public static String takeScreenshot(WebDriver driver, String testName) {
         if (driver == null) {

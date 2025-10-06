@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name = "Lambda test suite Selenium-101">
+<suite name = "Lambda test suite Selenium-101" parallel = "tests" thread-count = "2" >
     <listeners>
         <listener class-name="Listeners.ListenersSetup"/>
     </listeners>
     <test name = "ChromeTest">
+        <parameter name = "browser" value = "Chrome"/>
         <classes>
             <class name = "LambdaTest.AssignmentTest"/>
         </classes>
-    </test>    
+    </test>
+    <test name = "FireFoxTest">
+        <parameter name = "browser" value = "FireFox"/>
+        <classes>
+            <class name = "LambdaTest.AssignmentTest"/>
+        </classes>
+    </test>
 </suite>
 
