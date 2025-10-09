@@ -12,7 +12,6 @@ public class SimpleFormPage extends ReusableComponents{
 
     public SimpleFormPage(WebDriver driver) {
         super(driver);
-        PageFactory.initElements(driver, this);
     }
 
     private String input = "Welcome to LambdaTest";

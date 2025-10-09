@@ -14,7 +14,6 @@ public class HomePage extends ReusableComponents {
 
     public HomePage(WebDriver driver) {
         super(driver);
-        PageFactory.initElements(driver, this);
     }
 
     @FindBy(xpath = "//div[contains(@class, 'text-center')]/h1")

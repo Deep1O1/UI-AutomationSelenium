@@ -13,7 +13,6 @@ public class InputFormPage extends ReusableComponents{
     
     public InputFormPage(WebDriver driver) {
         super(driver);
-        PageFactory.initElements(driver, this);
     }
 
     @FindBy(xpath = "(//button[@type = 'submit'])[2]")

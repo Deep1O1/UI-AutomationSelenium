@@ -13,7 +13,6 @@ public class DragDropSliderPage extends ReusableComponents{
     
     public DragDropSliderPage(WebDriver driver) {
         super(driver);
-        PageFactory.initElements(driver, this);
     }
 
     @FindBy(css = "#slider3 div input")
