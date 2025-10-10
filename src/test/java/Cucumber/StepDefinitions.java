@@ -3,6 +3,7 @@ package Cucumber;
 import BaseUtility.BaseTest;
 import PageObjects.HomePage;
 import PageObjects.SimpleFormPage;
+import UtilityManager.WebDriverInstanceSetup;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -16,16 +17,17 @@ public class StepDefinitions extends BaseTest {
 
     @Given("User is in the home page")
     public void User_is_in_the_home_page(){
-        setUp();
-        hp = new HomePage(driver);
+        hp = new HomePage(WebDriverInstanceSetup.getDriver());
         hp.validateHomepage();
         Assert.assertTrue(hp.validateURLContent());
+        System.out.println("I am here");
     }
 
     @Given("User is in the simple form demo page")
     public void User_is_in_the_simple_form_demo_page(){
+        System.out.println("I am not here");
         hp.selectSimpleFormDemo();
-        sf = new SimpleFormPage(driver);
+        sf = new SimpleFormPage(WebDriverInstanceSetup.getDriver());
         sf.validateChildPage();
     }
 
@@ -42,6 +44,6 @@ public class StepDefinitions extends BaseTest {
     @Then("Message should get displayed")
     public void Message_should_get_displayed(){
         Assert.assertTrue(sf.validateMessageContent());
-        tearDown();
+        Assert.fail();
     }
 }

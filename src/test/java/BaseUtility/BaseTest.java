@@ -36,7 +36,7 @@ public class BaseTest {
 
 
 
-    public static String takeScreenshot(WebDriver driver, String testName) {
+    public String takeScreenshot(WebDriver driver, String testName) {
         if (driver == null) {
             throw new IllegalArgumentException("WebDriver instance is null");
         }
