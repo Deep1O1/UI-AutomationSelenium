@@ -44,6 +44,5 @@ public class StepDefinitions extends BaseTest {
     @Then("Message should get displayed")
     public void Message_should_get_displayed(){
         Assert.assertTrue(sf.validateMessageContent());
-        Assert.fail();
     }
 }

@@ -24,27 +24,7 @@ public class Hooks extends BaseTest {
     public void environmentSetup(Scenario scenario){
         setUp();
         reports = ExtentTestSetup.getExtentReports();
-        String directory = "Test-Reports/screenshots";
-        Path screenshotDir = Paths.get(directory);
-
-        try {
-            if (Files.exists(screenshotDir)) {
-                Files.walk(screenshotDir)
-                        .filter(Files::isRegularFile)
-                        .forEach(path -> {
-                            try {
-                                Files.delete(path);
-                            } catch (IOException e) {
-                                System.err.println("Failed to delete: " + path);
-                            }
-                        });
-            } else {
-                Files.createDirectories(screenshotDir);
-                System.out.println("Screenshot folder created.");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        cleanScreenshotFolder();
         ExtentTest test = reports.createTest(scenario.getName());
         ExtentTestSetup.setTest(test);
     }

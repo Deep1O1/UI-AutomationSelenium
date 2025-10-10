@@ -11,6 +11,9 @@ import org.testng.annotations.BeforeMethod;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -57,6 +60,30 @@ public class BaseTest {
             e.printStackTrace();
         }
         return "./screenshots/" + fileName;
+    }
+
+    public void cleanScreenshotFolder(){
+        String directory = "Test-Reports/screenshots";
+        Path screenshotDir = Paths.get(directory);
+
+        try {
+            if (Files.exists(screenshotDir)) {
+                Files.walk(screenshotDir)
+                        .filter(Files::isRegularFile)
+                        .forEach(path -> {
+                            try {
+                                Files.delete(path);
+                            } catch (IOException e) {
+                                System.err.println("Failed to delete: " + path);
+                            }
+                        });
+            } else {
+                Files.createDirectories(screenshotDir);
+                System.out.println("Screenshot folder created.");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }
