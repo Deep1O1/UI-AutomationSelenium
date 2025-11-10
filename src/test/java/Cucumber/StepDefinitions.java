@@ -1,6 +1,5 @@
 package Cucumber;
 
-import BaseUtility.BaseTest;
 import PageObjects.HomePage;
 import PageObjects.SimpleFormPage;
 import UtilityManager.WebDriverInstanceSetup;
@@ -8,16 +7,18 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-public class StepDefinitions extends BaseTest {
+public class StepDefinitions {
 
     private HomePage hp;
     private SimpleFormPage sf;
+    private final WebDriver driver = WebDriverInstanceSetup.getDriver();
 
     @Given("User is in the home page")
     public void User_is_in_the_home_page(){
-        hp = new HomePage(WebDriverInstanceSetup.getDriver());
+        hp = new HomePage(driver);
         hp.validateHomepage();
         Assert.assertTrue(hp.validateURLContent());
         System.out.println("I am here");
@@ -27,7 +28,7 @@ public class StepDefinitions extends BaseTest {
     public void User_is_in_the_simple_form_demo_page(){
         System.out.println("I am not here");
         hp.selectSimpleFormDemo();
-        sf = new SimpleFormPage(WebDriverInstanceSetup.getDriver());
+        sf = new SimpleFormPage(driver);
         sf.validateChildPage();
     }
 

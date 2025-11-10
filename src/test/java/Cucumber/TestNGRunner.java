@@ -5,13 +5,14 @@ import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.DataProvider;
 
 @CucumberOptions(
-        features = "src/test/java/Features",
+        features = "src/test/FeatureFiles/Demo",
         glue = {"Cucumber" , "HooksSetup"},
         monochrome = true,
         plugin = {
                 "pretty",
                 "html:cucumberTarget/cucumber.html"}
 )
+
 public class TestNGRunner extends AbstractTestNGCucumberTests {
 
     @Override
