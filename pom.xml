@@ -11,6 +11,7 @@
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
+        <suiteXmlFile>TestSuites/testng.xml</suiteXmlFile>
     </properties>
 
     <dependencies>
@@ -53,23 +54,33 @@
     <profiles>
         <profile>
             <id>Regression</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <version>3.2.5</version>
-                        <configuration>
-                            <suiteXmlFiles>
-                                <suiteXmlFile>TestSuites/testng.xml</suiteXmlFile>
-                            </suiteXmlFiles>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
+            <properties>
+                <suiteXmlFile>TestSuites/testng.xml</suiteXmlFile>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>Smoke</id>
+            <properties>
+                <suiteXmlFile>TestSuites/testng.xml</suiteXmlFile>
+            </properties>
         </profile>
     </profiles>
 
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <!--suppress UnresolvedMavenProperty -->
+                        <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
